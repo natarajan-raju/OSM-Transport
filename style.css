@@ -12,6 +12,7 @@
         /* Nav bar */
         #navbar {
             z-index: 100;
+
         }
         #blob-svg path {
             transition: fill 1s ease-in-out;
@@ -88,6 +89,10 @@
         @media (max-width: 767px) {
             .overlay p {
                 text-align: justify;
+            }
+
+            nav{
+                padding: 2px;
             }
         }
         
