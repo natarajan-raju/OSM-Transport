@@ -1,0 +1,11 @@
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Block unnecessary folders (update if you have these)
+Disallow: /assets/
+Disallow: /admin/
+Disallow: /cgi-bin/
+
+# Sitemap link
+Sitemap: https://osmtransport.in/sitemap.xml

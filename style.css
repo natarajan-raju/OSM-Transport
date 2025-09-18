@@ -1,0 +1,228 @@
+        html{
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #222;
+        }
+        h1, h2, h3 {
+            font-family: 'Bungee', sans-serif;
+        }
+
+        /* Nav bar */
+        #navbar {
+            z-index: 100;
+        }
+        #blob-svg path {
+            transition: fill 1s ease-in-out;
+            transform-origin: center;
+        }
+
+        /* Container for the gradient layers */
+        .dynamic-bg-wrapper {
+            position: relative;
+            min-height: 100vh;
+        }
+        
+        /* Individual gradient layers for crossfading */
+        .gradient-layer {
+            position: absolute;
+            inset: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .gradient-1 {
+            background: linear-gradient(135deg, #6b0000, #2e0033);
+            opacity: 1; /* This will be the initial active layer */
+        }
+        
+        .gradient-2 {
+            background: linear-gradient(135deg, #8b3a00, #4f1a00);
+            opacity: 0; /* This will be hidden initially */
+        }
+        .gradient-3 {
+            background: linear-gradient(135deg, #1A237E, #311B92);
+            opacity: 0;
+        }
+        .gradient-4 {
+            background: linear-gradient(135deg, #1f012b, #43036e);
+            opacity: 0;
+        }
+
+        /* About section styles */
+        #about-us-section {
+            transition: background 1s ease-in-out;
+        }
+        
+        /* Default blob color */
+        #about-us-section .blob-svg path {
+            transition: fill 1s ease-in-out;
+            fill: #DC2626;
+        }
+
+        /* Scrolled blob color */
+        #about-us-section.scrolled .blob-svg path {
+            fill: #f7d300;
+        }
+
+        /* Blob hover effect when not scrolled */
+        #about-us-section:not(.scrolled) .blob-svg:hover path {
+            fill: #8b0000;
+        }
+        
+        /* Blob hover effect when scrolled */
+        #about-us-section.scrolled .blob-svg:hover path {
+            fill: #ff8c00;
+        }
+        
+        /* Overlays initial state and transition */
+        .overlay {
+            transform: translateX(0);
+            transition: transform 0.5s ease-out;
+        }
+        .overlay.hidden {
+            transform: translateX(-100%);
+        }
+
+        /* Justify paragraph text on mobile screens */
+        @media (max-width: 767px) {
+            .overlay p {
+                text-align: justify;
+            }
+        }
+        
+        /* Business Numbers Counter section with pattern background */
+        #counter-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/assets/pattern.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Navbar styles */
+        .navbar-transparent {
+            background-color: transparent;
+            transition: background-color 0.5s ease;
+        }
+        .navbar-gunmetal {
+            background-color: rgba(15, 23, 42, 0.9); /* slate-900 with opacity */
+            transition: background-color 0.5s ease;
+        }
+        .text-link-white {
+            color: #ffffff;
+            transition: color 0.5s ease;
+        }
+
+        /* Vision & Mission card hover effects */
+        .vision-mission-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .vision-mission-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .vision-mission-card img {
+            transition: transform 0.3s ease-in-out;
+        }
+        .vision-mission-card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* WhatsApp floating icon */
+        .whatsapp-icon {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .whatsapp-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        .whatsapp-icon svg {
+            width: 36px;
+            height: 36px;
+        }
+
+        /* Contact us */
+        #contact-us-section{
+            background: url('/assets/darkbg.webp') no-repeat center center/cover;
+        }
+        /* Fixed image background for services section */
+        .services-bg-fixed {
+            background: linear-gradient(135deg, #1A237E, #311B92);
+        }
+        .service-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            background-color: #1a202c; /* Tailwind's slate-900 */
+        }
+        .service-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        
+        .service-card-1 {
+            background-color: rgba(75, 0, 0, 0.9);
+        }
+
+        .service-card-2 {
+            background-color: rgba(0, 0, 75, 0.9);
+        }
+
+        .service-card-3 {
+            background-color: rgba(47, 0, 80, 0.9);
+        }
+
+        .service-card-4 {
+            background-color: rgba(153, 85, 0, 0.9);
+        }
+
+        .service-card-5 {
+            background-color: rgba(64, 64, 0, 0.9);
+        }
+
+        .service-card-6 {
+            background-color: rgba(122, 91, 7, 0.9);
+        }
+        
+        /* Mobile-first justified text */
+        .text-regular-service {
+            text-align: justify;
+        }
+        /* Web/Desktop left-aligned text */
+        @media (min-width: 768px) {
+            .text-regular-service {
+                text-align: left;
+            }
+        }
+        .accordion-item.active .accordion-content {
+            display: block;
+        }
+        .accordion-content {
+            display: none;
+        }
